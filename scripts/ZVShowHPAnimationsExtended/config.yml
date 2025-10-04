@@ -1,5 +1,5 @@
 --- !ruby/object:PluginManager::Config
-name: ZVShowHPAnimations
+name: ZVShowHPAnimationsExtended
 authors:
 - zhec
 version: 1.0.0.0
