@@ -1,5 +1,5 @@
 module ZVBattleUI
-  # Handler for creating animations to be shown when a battler's HP is changed
+  # Handler for creating animations to show when a battler's HP should change
   class ShowHPAnimationHandler
     # Create a new HP animation handler
     def initialize
@@ -17,7 +17,7 @@ module ZVBattleUI
     # @param hp [Integer]
     # @param effectiveness [Float, nil]
     # @param **others [Hash]
-    # @return Array[Yuki::Animation::TimedAnimation]
+    # @return [Array<Yuki::Animation::TimedAnimation>]
     def create_animations(target, hp, effectiveness, **others)
       animations = @animators.map { |a| a.create_animation(target, hp, effectiveness, **others) }
       return animations.compact

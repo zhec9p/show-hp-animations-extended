@@ -5,4 +5,5 @@
 
 !scripts
 scripts/*
-!scripts/ZVShowHPAnimations
+!scripts/ZVShowHPAnimationsExtended
+!scripts/ZVShowHPAnimationsExtended.psdkplug
