@@ -1,0 +1,9 @@
+--- !ruby/object:PluginManager::Config
+name: ZVShowHPAnimations
+authors:
+- zhec
+version: 1.0.0.0
+deps: []
+psdk_compatibility_script: psdk.rb
+retry_psdk_compatibility_after_plugin_load: false
+added_files: []
