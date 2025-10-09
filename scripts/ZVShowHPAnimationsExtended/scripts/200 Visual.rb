@@ -14,7 +14,6 @@ module Battle
       end
 
       def show_hp_animations(targets, hps, effectiveness = [], **others, &messages)
-        log_data("hps: #{hps}")
         lock do
           wait_for_animation
 
@@ -46,4 +45,3 @@ module Battle
     prepend ZVShowHPAnimationExtendedMock
   end
 end
-
