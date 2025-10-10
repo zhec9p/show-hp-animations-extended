@@ -19,3 +19,16 @@ module ZVBattleUI
     end
   end
 end
+
+module Battle
+  class Visual
+    class FakeHPAnimation
+      module ZVShowHPAnimationExtendedFakeHPAnim
+        def effectiveness_sound(...)
+          nil
+        end
+      end
+      prepend ZVShowHPAnimationExtendedFakeHPAnim
+    end
+  end
+end

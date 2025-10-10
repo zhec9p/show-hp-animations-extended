@@ -3,11 +3,12 @@ module Battle
     # Configure the HP animation handler
     def zv_configure_hp_animation_handler
       @show_hp_animators = ZVBattleUI::ShowHPAnimationHandler.new
+      @show_hp_animators.add(ZVBattleUI::EffectivenessHPAnimator.new)
       @show_hp_animators.add(ZVBattleUI::ShowHPAnimator.new(@scene))
       @show_hp_animators.add(ZVBattleUI::ShowFakeHPAnimator.new(@scene))
     end
 
-    module ZVShowHPAnimationExtended
+    module ZVShowHPAnimationExtendedVisual
       def initialize(...)
         super
         zv_configure_hp_animation_handler
@@ -33,15 +34,15 @@ module Battle
         end
       end
     end
-    prepend ZVShowHPAnimationExtended
+    prepend ZVShowHPAnimationExtendedVisual
   end
 
   module VisualMock
-    module ZVShowHPAnimationExtendedMock
+    module ZVShowHPAnimationExtendedVisualMock
       def show_hp_animations(targets, hps, effectiveness = [], **others, &messages)
         super(targets, hps, effectiveness, &messages)
       end
     end
-    prepend ZVShowHPAnimationExtendedMock
+    prepend ZVShowHPAnimationExtendedVisualMock
   end
 end
