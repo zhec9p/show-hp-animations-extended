@@ -1,6 +1,6 @@
 module ZVBattleUI
   # Creates the waiting animation for 0 HP being dealt
-  class ShowFakeHPAnimator < ShowHPAnimatorBase
+  class FakeHPAnimator < HPAnimatorBase
     # @param scene [Battle::Scene]
     def initialize(scene)
       super()
@@ -17,7 +17,7 @@ module ZVBattleUI
     # @param hp [Integer]
     # @param effectiveness [Float, nil]
     # @param **_others [Hash]
-    # @return [Yuki::Animation::TimedAnimation, nil]
+    # @return [Yuki::Animation::TimedAnimation, nil] nil = no animation
     def create_animation(target, hp, effectiveness, **_others)
       return if hp != 0
 
@@ -29,12 +29,9 @@ end
 module Battle
   class Visual
     class FakeHPAnimation
-      module ZVShowHPAnimationExtendedFakeHPAnim
-        def effectiveness_sound(...)
-          nil
-        end
+      def effectiveness_sound(...)
+        nil
       end
-      prepend ZVShowHPAnimationExtendedFakeHPAnim
     end
   end
 end

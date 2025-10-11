@@ -1,13 +1,12 @@
 module ZVBattleUI
-  # Handler for creating animations to show when a battler's HP should change
+  # Handler for creating animations to show when a battler's HP may go up/down
   class ShowHPAnimationHandler
-    # Create a new HP animation handler
     def initialize
       @animators = []
     end
 
     # Add an HP animation creator.
-    # @param animator [ZVBattleUI::ShowHPAnimatorBase]
+    # @param animator [ZVBattleUI::HPAnimatorBase]
     def add(animator)
       @animators << animator
     end
@@ -18,7 +17,7 @@ module ZVBattleUI
       @animators.reject! { |a| a.name == name }
     end
 
-    # Create all relevant animations for a battler's HP change
+    # Create all relevant animations when a battler's HP may go up/down
     # @param target [PFM::PokemonBattler]
     # @param hp [Integer]
     # @param effectiveness [Float, nil]

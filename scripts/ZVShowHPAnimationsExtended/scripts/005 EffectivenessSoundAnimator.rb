@@ -1,6 +1,6 @@
 module ZVBattleUI
   # Creates the effectiveness sound animation animation for HP going down
-  class EffectivenessHPAnimator < ShowHPAnimatorBase
+  class EffectivenessSoundAnimator < HPAnimatorBase
     # Name of the HP animation creator
     # @return [Symbol]
     def name
@@ -19,7 +19,6 @@ module ZVBattleUI
       anim = ya.se_play('hitlow')
       anim = ya.se_play('hit') if effectiveness == 1
       anim = ya.se_play('hitplus') if effectiveness > 1
-      anim.start
       return anim
     end
   end
