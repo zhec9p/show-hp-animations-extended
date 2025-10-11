@@ -7,6 +7,12 @@ module ZVBattleUI
       @scene = scene
     end
 
+    # Name of the HP animation creator
+    # @return [Symbol]
+    def name
+      return :fake_hp
+    end
+
     # @param target [PFM::PokemonBattler]
     # @param hp [Integer]
     # @param effectiveness [Float, nil]

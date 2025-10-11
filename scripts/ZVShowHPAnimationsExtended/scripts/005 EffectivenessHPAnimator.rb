@@ -1,6 +1,12 @@
 module ZVBattleUI
   # Creates the effectiveness sound animation animation for HP going down
   class EffectivenessHPAnimator < ShowHPAnimatorBase
+    # Name of the HP animation creator
+    # @return [Symbol]
+    def name
+      return :effectiveness_sound
+    end
+
     # @param _target [PFM::PokemonBattler]
     # @param _hp [Integer]
     # @param effectiveness [Float, nil]

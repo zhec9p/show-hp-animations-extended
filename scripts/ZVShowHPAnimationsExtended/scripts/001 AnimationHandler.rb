@@ -12,6 +12,12 @@ module ZVBattleUI
       @animators << animator
     end
 
+    # Delete a specific HP animation creator(s)
+    # @param name [Symbol] Name of the HP animation creator
+    def delete_animator(name)
+      @animators.reject! { |a| a.name == name }
+    end
+
     # Create all relevant animations for a battler's HP change
     # @param target [PFM::PokemonBattler]
     # @param hp [Integer]
