@@ -2,7 +2,6 @@ module Battle
   class Visual
     # Configure the HP animation handler
     def zv_configure_hp_animation_handler
-      @show_hp_animators = ZVBattleUI::ShowHPAnimationHandler.new
       @show_hp_animators.add(ZVBattleUI::EffectivenessHPAnimator.new)
       @show_hp_animators.add(ZVBattleUI::ShowHPAnimator.new(@scene))
       @show_hp_animators.add(ZVBattleUI::ShowFakeHPAnimator.new(@scene))
@@ -11,6 +10,7 @@ module Battle
     module ZVShowHPAnimationExtendedVisual
       def initialize(...)
         super
+        @show_hp_animators = ZVBattleUI::ShowHPAnimationHandler.new
         zv_configure_hp_animation_handler
       end
 
